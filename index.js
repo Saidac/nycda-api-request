@@ -18,7 +18,7 @@ app.set('view engine', 'pug');
 app.use(morgan('dev'));
 
 app.get('/:id', (req, res) => {
-  BaseRequest.get(COINMARKETCAP_API_SERVER + '/coins/' + req.params.id, (error, response, body) => {
+  BaseRequest.get(COINMARKETCAP_API_SERVER + '/coins/' + req. params.id, (error, response, body) => {
     if (!error) {
       console.log(body);
       res.render('coins/show', { coin: JSON.parse(body) });
